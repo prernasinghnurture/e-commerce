@@ -1,0 +1,51 @@
+{
+  "server": {
+    "port": 6000,
+    "api_hook": "farm.nurture.location.service.BackendControllerImpl",
+    "startup_hook": "farm.nurture.location.config.service.StartupHookImpl"
+  },
+
+  "prometheus" : {
+    "enabled": true,
+    "port": 6005
+  },
+
+  "temporal_worker": {
+    "enabled": true,
+    "namespace": "default",
+    "address": "localhost:7233",
+    "task_queue": "InsuranceServiceWorker"
+  },
+  "elastic_apm": {
+    "enabled": true
+  },
+
+  "proto": {
+    "service_name": "InsuranceService",
+    "proto_generate_path": "proto",
+    "java_generate_path": "/zerotouch/src/main",
+    "java_override_path": "/core/src/main",
+    "graphql_generate_path": "/graphql/src/main",
+    "go_generate_path": "/zerotouch/golang",
+    "go_override_path": "/core/golang",
+    "namespace": "platform",
+    "proto_package": "farm.nurture.core.contracts.InsuranceService",
+    "java_package": "farm.nurture.core.contracts.InsuranceService",
+    "go_package": "InsuranceService",
+    "code_url": "code.nurture.farm",
+    "graphql_uri": "/platform/insurance_service",
+    "code_generation_input_config_source": "LAM"
+  },
+  "deployment_config": {
+    "ecr_link": "ecr_link"
+
+  },
+  "generation_info":{
+    "new_repo": "true"
+  },
+  "contract": {
+    "enabled": true,
+    "contract_path": "code.nurture.farm/Core/Contracts",
+    "contract_tag": "v1.8.1996-RELEASE"
+  }
+}

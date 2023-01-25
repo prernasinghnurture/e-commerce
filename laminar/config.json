@@ -1,0 +1,43 @@
+{
+  "server": {
+    "port": 6000,
+    "api_hook": "farm.nurture.ECommerce.BackendControllerImpl",
+    "startup_hook": "farm.nurture.ECommerce.StartupHookImpl"
+  },
+  "prometheus" : {
+    "enabled": true,
+    "port": 6005
+  },
+  "temporal_worker": {
+    "enabled": false,
+    "namespace": "default",
+    "address": "localhost:7233",
+    "task_queue": "MicroServiceWorker"
+  },
+  "elastic_apm": {
+    "enabled": true
+  },
+  "proto": {
+    "service_name": "ECommerce",
+    "proto_generate_path": "proto",
+    "java_generate_path":  "/zerotouch/src/main",
+    "java_override_path": "/core/src/main",
+    "graphql_generate_path": "/graphql/src/main",
+    "go_generate_path": "/zerotouch/golang",
+    "go_override_path": "/core/golang",
+    "namespace": "core",
+    "proto_package": "farm.nurture.core.contracts.ECommerce",
+    "java_package": "farm.nurture.ECommerce",
+    "go_package": "ECommerce",
+    "code_url": "code.nurture.farm",
+    "graphql_uri": "/core/ECommerce",
+    "code_generation_input_config_source": "LAM"
+  },
+  "deployment_config": {
+    "ecr_link": "ecr_link"
+
+  },
+  "generation_info":{
+    "new_repo": "true"
+  }
+}
